@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasFriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="hasFriends" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasFriends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="hasFriend" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="hasPhone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Phone" inverseName="belongsTo" inverseEntity="Phone" syncable="YES"/>
+    </entity>
+    <entity name="Phone" representedClassName="Phone" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="hasPhone" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Friend" positionX="-54" positionY="9" width="128" height="90"/>
+        <element name="Phone" positionX="-36" positionY="27" width="128" height="75"/>
+    </elements>
+</model>

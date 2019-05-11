@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yR9-4g-ioi">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="obz-yE-sNY">
+            <objects>
+                <viewController id="puS-T7-ePP" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6fG-3U-gZU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AH5-96-pLl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vgS-Fa-SN5"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Thread" id="UDc-hV-kxQ"/>
+                        <segue destination="9dk-ej-aAP" kind="show" identifier="Core Data" id="pH3-dU-VvB"/>
+                        <segue destination="gSR-Xj-2Fo" kind="show" identifier="AFNetworking" id="kih-su-xXT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYJ-yx-XS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="92"/>
+        </scene>
+        <!--Thread View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ThreadViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00L-tw-vpi">
+                                <rect key="frame" x="32" y="130" width="87" height="30"/>
+                                <state key="normal" title="Thread Start"/>
+                                <connections>
+                                    <action selector="threadStartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Tl-0N-gkS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-S1-hqL">
+                                <rect key="frame" x="32" y="168" width="97" height="30"/>
+                                <state key="normal" title="Thread Check"/>
+                                <connections>
+                                    <action selector="threadCheckPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vBF-eW-q37"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Av-lJ-Oak">
+                                <rect key="frame" x="32" y="206" width="85" height="30"/>
+                                <state key="normal" title="Thread Stop"/>
+                                <connections>
+                                    <action selector="threadStopPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfr-qs-vMY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-mL-WpJ">
+                                <rect key="frame" x="32" y="277" width="70" height="30"/>
+                                <state key="normal" title="GCD Start"/>
+                                <connections>
+                                    <action selector="gcdStartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZQC-DW-e0u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-ag-5Yd">
+                                <rect key="frame" x="32" y="328" width="79" height="30"/>
+                                <state key="normal" title="GCD Group"/>
+                                <connections>
+                                    <action selector="gcdGroupPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V28-Fd-LwK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mah-7F-kdw">
+                                <rect key="frame" x="32" y="448" width="89" height="30"/>
+                                <state key="normal" title="Pthread stop"/>
+                                <connections>
+                                    <action selector="stopPthreadPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAU-b7-avL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-Ma-iMa">
+                                <rect key="frame" x="32" y="515" width="125" height="30"/>
+                                <state key="normal" title="NSOperation start"/>
+                                <connections>
+                                    <action selector="nsoperationStartpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnJ-WL-26z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g40-Bf-9uy">
+                                <rect key="frame" x="32" y="553" width="123" height="30"/>
+                                <state key="normal" title="NSOperation stop"/>
+                                <connections>
+                                    <action selector="nsoperationStoppressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q6W-MK-KNF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTa-6t-leJ">
+                                <rect key="frame" x="32" y="391" width="91" height="30"/>
+                                <state key="normal" title="Pthread start"/>
+                                <connections>
+                                    <action selector="startPThreadPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uul-to-sZf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BTa-6t-leJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="2du-sp-olx"/>
+                            <constraint firstItem="BTa-6t-leJ" firstAttribute="top" secondItem="w5I-ag-5Yd" secondAttribute="bottom" constant="33" id="5cZ-6e-UBU"/>
+                            <constraint firstItem="MaS-mL-WpJ" firstAttribute="top" secondItem="9Av-lJ-Oak" secondAttribute="bottom" constant="41" id="A1x-OD-YnS"/>
+                            <constraint firstItem="g40-Bf-9uy" firstAttribute="top" secondItem="Ucl-Ma-iMa" secondAttribute="bottom" constant="8" id="Ae2-mQ-Gbe"/>
+                            <constraint firstItem="9Av-lJ-Oak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="BXt-Ga-zc9"/>
+                            <constraint firstItem="00L-tw-vpi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="HU4-Lc-6za"/>
+                            <constraint firstItem="g40-Bf-9uy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="JPc-to-cGZ"/>
+                            <constraint firstItem="w5I-ag-5Yd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="KVH-eL-0Qr"/>
+                            <constraint firstItem="Ucl-Ma-iMa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Rv8-G8-5tk"/>
+                            <constraint firstItem="d8C-S1-hqL" firstAttribute="top" secondItem="00L-tw-vpi" secondAttribute="bottom" constant="8" id="WG2-D2-zlW"/>
+                            <constraint firstItem="w5I-ag-5Yd" firstAttribute="top" secondItem="MaS-mL-WpJ" secondAttribute="bottom" constant="21" id="XOV-Q8-yv8"/>
+                            <constraint firstItem="mah-7F-kdw" firstAttribute="top" secondItem="BTa-6t-leJ" secondAttribute="bottom" constant="27" id="cCg-i2-vKu"/>
+                            <constraint firstItem="00L-tw-vpi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="ggn-CX-ozm"/>
+                            <constraint firstItem="Ucl-Ma-iMa" firstAttribute="top" secondItem="mah-7F-kdw" secondAttribute="bottom" constant="37" id="giL-mM-QGk"/>
+                            <constraint firstItem="d8C-S1-hqL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="iHO-oj-fpd"/>
+                            <constraint firstItem="MaS-mL-WpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="pBN-iF-vBF"/>
+                            <constraint firstItem="9Av-lJ-Oak" firstAttribute="top" secondItem="d8C-S1-hqL" secondAttribute="bottom" constant="8" id="t44-d8-Pm8"/>
+                            <constraint firstItem="mah-7F-kdw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="vvv-aS-LRa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="92"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ACN-cB-E1H">
+            <objects>
+                <viewController id="gSR-Xj-2Fo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="waY-GJ-L2P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="INL-CX-c78"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ezl-ak-wVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="-198"/>
+        </scene>
+        <!--Core Data View Controller-->
+        <scene sceneID="VhR-WH-eZJ">
+            <objects>
+                <viewController id="9dk-ej-aAP" customClass="CoreDataViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vG-3q-D1i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TL3-VR-dDO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fit-a8-UM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="279"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kmf-7b-FhY">
+            <objects>
+                <navigationController id="yR9-4g-ioi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGV-t9-wE2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="puS-T7-ePP" kind="relationship" relationship="rootViewController" id="hgw-CT-NE2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ov3-pg-JoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="92"/>
+        </scene>
+    </scenes>
+</document>
