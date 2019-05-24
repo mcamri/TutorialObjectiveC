@@ -131,14 +131,24 @@
             </objects>
             <point key="canvasLocation" x="1809" y="92"/>
         </scene>
-        <!--View Controller-->
+        <!--Networking View Controller-->
         <scene sceneID="ACN-cB-E1H">
             <objects>
-                <viewController id="gSR-Xj-2Fo" sceneMemberID="viewController">
+                <viewController id="gSR-Xj-2Fo" customClass="AFNetworkingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="waY-GJ-L2P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2b-5e-ZLf">
+                                <rect key="frame" x="184" y="460" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y2b-5e-ZLf" firstAttribute="centerY" secondItem="INL-CX-c78" secondAttribute="centerY" id="Pzl-iI-C89"/>
+                            <constraint firstItem="Y2b-5e-ZLf" firstAttribute="centerX" secondItem="INL-CX-c78" secondAttribute="centerX" id="jzx-sH-az2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="INL-CX-c78"/>
                     </view>
                 </viewController>

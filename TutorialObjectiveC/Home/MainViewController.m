@@ -8,10 +8,21 @@
 
 #import "MainViewController.h"
 
+@interface SubClassViewController : MainViewController
+
+@end
+
+@implementation SubClassViewController
+
+
+@end
+
 @interface MainViewController ()
 
 @property (nonatomic, retain) UITableView* tableView;
 @property (atomic, retain) NSMutableArray* dataSource;
+@property NSString* str;
+
 
 @end
 

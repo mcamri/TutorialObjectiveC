@@ -8,6 +8,24 @@
 
 #import "AFNetworkingViewController.h"
 
+
+@interface MyClass:NSObject
+@property (nonatomic, strong) void(^block)(void);
+@end
+
+@implementation MyClass
+
+- (void)foobar {
+    __weak MyClass *weakSelf = self;
+    self.block = ^ {
+        MyClass * strongSelf = weakSelf;
+        [strongSelf foobar];
+    };
+    
+}
+
+@end
+
 @interface AFNetworkingViewController ()
 
 @end
@@ -20,6 +38,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(100,100, 100, 100)];
+    [self.view addSubview:view];
+    view.backgroundColor = UIColor.greenColor;
+    view.translatesAutoresizingMaskIntoConstraints = false;
 }
 
 - (void)viewDidAppear:(BOOL)animated{

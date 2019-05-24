@@ -13,11 +13,22 @@
 
 @end
 
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"willFinishLanchingWithOption");
+    
+    NSMutableString* str = [NSMutableString stringWithString:@"zzz"];
+    [self changeString:str];
+    NSLog(str);
+    
     return YES;
+}
+
+- (void) changeString:(NSMutableString*) input {
+    [input appendString:@"appended"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
